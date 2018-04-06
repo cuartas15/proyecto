@@ -1,0 +1,26 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto tarea foxythemes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w src/sass/app.scss dist/assets/css/style.css",
+    "pug": "pug -w src/html/index.pug -o dist -P"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuartas15/proyecto.git"
+  },
+  "author": "Santiago Cuartas Arango",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuartas15/proyecto/issues"
+  },
+  "homepage": "https://github.com/cuartas15/proyecto#readme",
+  "dependencies": {
+    "node-sass": "^4.8.3",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}

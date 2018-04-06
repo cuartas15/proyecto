@@ -1,0 +1,121 @@
+/* Icono de campana de icomoon */
+@font-face {
+  font-family: 'iconos';
+  src: url("fonts/iconos.eot?7k9ulk");
+  src: url("fonts/iconos.eot?7k9ulk#iefix") format("embedded-opentype"), url("fonts/iconos.ttf?7k9ulk") format("truetype"), url("fonts/iconos.woff?7k9ulk") format("woff"), url("fonts/iconos.svg?7k9ulk#iconos") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icono-"], [class*=" icono-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconos' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icono-bell:before {
+  content: "\e951"; }
+
+body {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  margin: 0px;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 19px;
+  color: #747474;
+  background-color: #F0F0F0; }
+
+a {
+  color: #FF3368; }
+
+.contenedor-icono-notificacion {
+  display: inline-block;
+  position: relative;
+  color: #D1D1D1;
+  font-size: 50px; }
+
+.contador-icono-notificacion {
+  position: absolute;
+  background-color: red;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  right: 0px;
+  top: 3px;
+  border-radius: 14px;
+  padding: 1px 8px; }
+
+.panel-notificacion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 50%;
+  border-radius: 8px;
+  padding: 22px;
+  margin: 35px 0px; }
+
+.punto-notificacion {
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
+  background-color: #FF2861;
+  width: 18px;
+  height: 16px;
+  border-radius: 50%; }
+
+.espacio-imagen {
+  width: 75px;
+  padding: 23px 0px;
+  line-height: 0px; }
+
+.imagen-contacto {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%; }
+
+.espacio-texto {
+  text-align: left;
+  width: calc(100% - 93px);
+  padding: 15px;
+  margin-left: 18px; }
+
+.espacio-texto p {
+  margin: 5px 0px; }
+
+.nombre-notificacion {
+  font-weight: 900; }
+
+.tiempo-notificacion {
+  font-weight: 200;
+  font-size: 18px;
+  color: #ABABAB; }
+
+@media screen and (max-width: 1050px) {
+  .panel-notificacion {
+    width: 65%;
+    margin: 30px 0px; } }
+
+@media screen and (max-width: 810px) {
+  .panel-notificacion {
+    width: 80%;
+    margin: 25px 0px; } }
+
+@media screen and (max-width: 545px) {
+  .panel-notificacion {
+    width: 90%;
+    padding: 10px;
+    margin: 20px 0px; }
+  .espacio-texto {
+    padding: 5px;
+    margin-left: 10px; } }
