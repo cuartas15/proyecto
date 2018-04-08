@@ -3,9 +3,9 @@ $web-color: #747474;
 $web-font-size: 19px;
 $web-background: #F0F0F0;
 $main-container-width: 750px;
-$main-container-width-1050: 650px;
-$main-container-width-670: 450px;
-$main-container-width-480: 310px;
+$main-container-width-medium: 650px;
+$main-container-width-small: 450px;
+$main-container-width-xsmall: 310px;
 $width-and-height-badge: 18px;
 $width-image-container: 95px;
 $primary-color: #FF2861;
@@ -126,6 +126,8 @@ a {
 
 .notification-badge {
 	position: absolute;
+	top: 0px;
+	left: 0px;
 	background-color: $primary-color;
 	width: $width-and-height-badge;
 	height: $width-and-height-badge;
@@ -146,7 +148,7 @@ a {
 
 .text-area {
 	text-align: left;
-	width: calc(100% - #{$width-image-container});
+	@include flex(calc(100% - #{$width-image-container}));
 	padding: 15px;
 	margin-left: 18px;
 }
@@ -167,7 +169,7 @@ a {
 
 @media screen and (max-width: 1050px) {
 	.content-container {
-		width: $main-container-width-1050;
+		width: $main-container-width-medium;
 	}
 
 	.notification-panel {
@@ -177,7 +179,7 @@ a {
 
 @media screen and (max-width: 670px) {
 	.content-container {
-		width: $main-container-width-670;
+		width: $main-container-width-small;
 	}
 
 	.notification-panel {
@@ -192,7 +194,7 @@ a {
 
 @media screen and (max-width: 480px) {
 	.content-container {
-		width: $main-container-width-480;
+		width: $main-container-width-xsmall;
 	}
 
 	.notification-panel {

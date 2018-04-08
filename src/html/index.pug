@@ -1,13 +1,13 @@
-mixin mensajeNotificacion(nombre, mensaje, tiempo, imagen)
+mixin mensajeNotificacion(name, message, time, image)
 	.notification-panel
 		.image-container
 			.notification-badge
 			.image-area
-				img(class="contact-image" src=imagen)
+				img.contact-image(src=image)
 		.text-area
-			p(class="contact-name")=nombre
-			p!=mensaje
-			p(class="notification-time")=tiempo
+			p.contact-name=name
+			p!=message
+			p.notification-time=time
 doctype
 html
 	head
@@ -19,8 +19,8 @@ html
 		.content-container
 			.notification-icon-container
 				.notification-icon
-					span(class="notification-icon-counter")!= 3
-					i(class="icono-bell")
-			+mensajeNotificacion("Jane Hayworth", "Replied your comment in <a>Textbook Exchange</a>", 'Now', 'http://d3cprjxvoejtmm.cloudfront.net/images/2011/12/adamari-lopez-foto-nueva-telenovela-300x300.jpg')
-			+mensajeNotificacion("Angie Clark", "Commented on your post in <a>Euro Girls Trip</a>", '10 minutes ago', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_o36ED4-QMyaye4Y0LBrG7s3iddVj5KPc5AM7INM35d26S6yjKg')
-			+mensajeNotificacion("Sid Banks", "And 3 others liked your photo album <a>Summer '16</a>", '2 hours ago', 'https://www.guiadelnino.com/var/guiadelnino.com/storage/images/en-familia/los-famosos-y-los-hijos/nombres-de-bebes-famosos-en-2014/leo-y-lenni/5064524-1-esl-ES/leo-y-lenni_fullblock_bordered.jpg')
+					span.notification-icon-counter!=3
+					i.icono-bell
+			+mensajeNotificacion("Jane Hayworth", "Replied your comment in <a>Textbook Exchange</a>", "Now", "http://d3cprjxvoejtmm.cloudfront.net/images/2011/12/adamari-lopez-foto-nueva-telenovela-300x300.jpg")
+			+mensajeNotificacion("Angie Clark", "Commented on your post in <a>Euro Girls Trip</a>", "10 minutes ago", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_o36ED4-QMyaye4Y0LBrG7s3iddVj5KPc5AM7INM35d26S6yjKg")
+			+mensajeNotificacion("Sid Banks", "And 3 others liked your photo album <a>Summer '16</a>", "2 hours ago", "https://www.guiadelnino.com/var/guiadelnino.com/storage/images/en-familia/los-famosos-y-los-hijos/nombres-de-bebes-famosos-en-2014/leo-y-lenni/5064524-1-esl-ES/leo-y-lenni_fullblock_bordered.jpg")

@@ -81,6 +81,8 @@ a {
 
 .notification-badge {
   position: absolute;
+  top: 0px;
+  left: 0px;
   background-color: #FF2861;
   width: 18px;
   height: 18px;
@@ -98,7 +100,9 @@ a {
 
 .text-area {
   text-align: left;
-  width: calc(100% - 95px);
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 calc(100% - 95px);
+  flex: 1 1 calc(100% - 95px);
   padding: 15px;
   margin-left: 18px; }
 
