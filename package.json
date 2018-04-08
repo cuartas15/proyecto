@@ -4,9 +4,12 @@
   "description": "Proyecto tarea foxythemes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass -w src/sass/app.scss dist/assets/css/style.css",
-    "pug": "pug -w src/html/index.pug -o dist -P"
+    "start": "npm-run-all --parallel dev-*",
+    "dev-server": "http-server ./dist -c-1",
+    "dev-watch-sass": "nodemon -e scss -x \"npm run dist-sass\"",
+    "dev-watch-pug": "nodemon -e pug -x \"npm run dist-pug\"",
+    "dist-sass": "node-sass src/sass/app.scss dist/assets/css/style.css",
+    "dist-pug": "pug src/html/index.pug -o dist -P"
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,11 @@
     "url": "https://github.com/cuartas15/proyecto/issues"
   },
   "homepage": "https://github.com/cuartas15/proyecto#readme",
-  "dependencies": {
+  "devDependencies": {
+    "http-server": "^0.11.1",
     "node-sass": "^4.8.3",
-    "pug": "^2.0.3",
+    "nodemon": "^1.17.3",
+    "npm-run-all": "^4.1.2",
     "pug-cli": "^1.0.0-alpha6"
   }
 }
