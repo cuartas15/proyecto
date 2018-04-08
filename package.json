@@ -2,15 +2,8 @@
   "name": "proyecto",
   "version": "1.0.0",
   "description": "Proyecto tarea foxythemes",
-  "main": "index.js",
-  "scripts": {
-    "start": "npm-run-all --parallel dev-*",
-    "dev-server": "http-server ./dist -c-1",
-    "dev-watch-sass": "nodemon -e scss -x \"npm run dist-sass\"",
-    "dev-watch-pug": "nodemon -e pug -x \"npm run dist-pug\"",
-    "dist-sass": "node-sass src/sass/app.scss dist/assets/css/style.css",
-    "dist-pug": "pug src/html/index.pug -o dist -P"
-  },
+  "main": "dist/index.html",
+  "homepage": "https://github.com/cuartas15/proyecto#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cuartas15/proyecto.git"
@@ -20,12 +13,38 @@
   "bugs": {
     "url": "https://github.com/cuartas15/proyecto/issues"
   },
-  "homepage": "https://github.com/cuartas15/proyecto#readme",
   "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "clean-css-cli": "^4.1.11",
     "http-server": "^0.11.1",
     "node-sass": "^4.8.3",
     "nodemon": "^1.17.3",
     "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0",
+    "postcss-flexbugs-fixes": "^3.3.0",
     "pug-cli": "^1.0.0-alpha6"
-  }
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel dev-*",
+    "dist": "npm-run-all dist-*",
+    "dev-server": "http-server ./dist -c-1",
+    "dev-watch-sass": "nodemon -e scss -x \"npm run dist-sass\"",
+    "dev-watch-pug": "nodemon -e pug -x \"npm run dist-pug\"",
+    "dist-sass": "node-sass src/sass/app.scss dist/assets/css/style.css",
+    "dist-pug": "pug src/html/index.pug -o dist -P",
+    "dist-prefix": "postcss --use autoprefixer postcss-flexbugs-fixes --replace \"dist/assets/css/*.css\"",
+    "dist-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/assets/css/style.min.css dist/assets/css/style.css"
+  },
+  "browserslist": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.1",
+    "Opera >= 30"
+  ]
 }
