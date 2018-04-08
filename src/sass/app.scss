@@ -1,9 +1,14 @@
-$fuente-web: "Gothic A1", sans-serif;
-$color-web: #747474;
-$tamano-fuente-web: 19px;
-$background-web: #F0F0F0;
-$anchopunto: 18px;
-$anchoimagen: 75px;
+$web-font: "Gothic A1", sans-serif;
+$web-color: #747474;
+$web-font-size: 19px;
+$web-background: #F0F0F0;
+$main-container-width: 750px;
+$main-container-width-medium: 650px;
+$main-container-width-small: 450px;
+$main-container-width-xsmall: 310px;
+$width-and-height-badge: 18px;
+$width-image-container: 95px;
+$primary-color: #FF2861;
 
 @mixin display-flex() {
 	display: -webkit-box;
@@ -11,16 +16,22 @@ $anchoimagen: 75px;
 	display: flex;
 }
 
-@mixin align-items($alineacion) {
-	-webkit-box-align: $alineacion;
-	-ms-flex-align: $alineacion;
-	align-items: $alineacion;
+@mixin align-items($align) {
+	-webkit-box-align: $align;
+	-ms-flex-align: $align;
+	align-items: $align;
 }
 
-@mixin align-self($alineacion) {
-	-ms-flex-item-align: $alineacion;
-    -ms-grid-row-align: $alineacion;
-    align-self: $alineacion;
+@mixin align-self($align) {
+	-ms-flex-item-align: $align;
+    -ms-grid-row-align: $align;
+    align-self: $align;
+}
+
+@mixin flex($width, $grow, $shrink) {
+	-webkit-box-flex: $shrink;
+	-ms-flex: $grow $shrink $width;
+	flex: $grow $shrink $width;
 }
 
 /* Icono de campana de icomoon */
@@ -59,26 +70,36 @@ body {
 	height: 100%;
 	padding-top: 40px;
 	margin: 0px;
-	font-family: $fuente-web;
-	font-size: $tamano-fuente-web;
-	color: $color-web;
-	background-color: $background-web;
+	font-family: $web-font;
+	font-size: $web-font-size;
+	color: $web-color;
+	background-color: $web-background;
 }
 
 a {
-	color: #FF3368;
+	color: $primary-color;
 }
 
-.contenedor-icono-notificacion {
+.content-container {
+	width: 750px;
+	margin: 0 auto;
+}
+
+.notification-icon-container {
+	margin: 0 auto;
+	width: 50px;
+}
+
+.notification-icon {
 	display: inline-block;
 	position: relative;
 	color: #D1D1D1;
 	font-size: 50px;
 }
 
-.contador-icono-notificacion {
+.notification-icon-counter {
 	position: absolute;
-	background-color: red;
+	background-color: $primary-color;
 	color: #ffffff;
 	font-size: 15px;	
 	font-weight: 900;
@@ -88,80 +109,96 @@ a {
 	padding: 1px 8px;
 }
 
-.panel-notificacion {
+.notification-panel {
 	@include display-flex();
 	@include align-items(center);
 	background-color: #ffffff;
-	width: 50%;
 	border-radius: 8px;
 	padding: 22px;
 	margin: 35px 0px;
 }
 
-.punto-notificacion {
-	@include align-self(start);
-	background-color: #FF2861;
-	width: $anchopunto;
-	height: 16px;
+.image-container { 
+	display: flex;
+	@include flex($width-image-container, 0, 0);
+	position: relative;
+}
+
+.notification-badge {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: $primary-color;
+	width: $width-and-height-badge;
+	height: $width-and-height-badge;
 	border-radius: 50%;	
 }
 
-.espacio-imagen {
-	width: $anchoimagen;
-	padding: 23px 0px;
+.image-area {
+	padding: 30px 0px;
+	padding-left: 18px;
 	line-height: 0px;
 }
 
-.imagen-contacto {
+.contact-image {
 	max-width: 100%;
 	max-height: 100%;
 	border-radius: 50%;
 }
 
-.espacio-texto {
+.text-area {
 	text-align: left;
-	width: calc(100% - #{$anchoimagen + $anchopunto});
+	@include flex(100%, 1, 1);
 	padding: 15px;
 	margin-left: 18px;
 }
 
-.espacio-texto p {
+.text-area p {
 	margin: 5px 0px;
 }
 
-.nombre-notificacion {
+.contact-name {
 	font-weight: 900;
 }
 
-.tiempo-notificacion {
+.notification-time {
 	font-weight: 200;
 	font-size: 18px;
 	color: #ABABAB;
 }
 
 @media screen and (max-width: 1050px) {
-	.panel-notificacion {
-		width: 65%;
+	.content-container {
+		width: $main-container-width-medium;
+	}
+
+	.notification-panel {
 		margin: 30px 0px;
 	}
 }
 
-@media screen and (max-width: 810px) {
-	.panel-notificacion {
-		width: 80%;
+@media screen and (max-width: 670px) {
+	.content-container {
+		width: $main-container-width-small;
+	}
+
+	.notification-panel {
 		margin: 25px 0px;
+	}
+
+	.text-area {
+		padding: 5px;
+		margin-left: 10px;
 	}
 }
 
-@media screen and (max-width: 545px) {
-	.panel-notificacion {
-		width: 90%;
-		padding: 10px;
-		margin: 20px 0px;
+@media screen and (max-width: 480px) {
+	.content-container {
+		width: $main-container-width-xsmall;
 	}
 
-	.espacio-texto {
-		padding: 5px;
-		margin-left: 10px;
+	.notification-panel {
+		padding: 10px;
+		margin: 20px 0px;
 	}
 }

@@ -1,23 +1,26 @@
-mixin mensajeNotificacion(nombre, mensaje, tiempo, imagen)
-	div(class="panel-notificacion")
-		div(class="punto-notificacion")
-		div(class="espacio-imagen")
-			img(class="imagen-contacto" src=imagen)
-		div(class="espacio-texto")
-			p(class="nombre-notificacion")=nombre
-			p!=mensaje
-			p(class="tiempo-notificacion")=tiempo
+mixin mensajeNotificacion(name, message, time, image)
+	.notification-panel
+		.image-container
+			.notification-badge
+			.image-area
+				img.contact-image(src=image)
+		.text-area
+			p.contact-name=name
+			p!=message
+			p.notification-time=time
 doctype
 html
 	head
 		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		link(href="assets/css/style.css" rel="stylesheet")
 		link(href="https://fonts.googleapis.com/css?family=Gothic+A1:100,200,400" rel="stylesheet")
 	body
-		center
-			div(class="contenedor-icono-notificacion")
-				span(class="contador-icono-notificacion")!= 3
-				i(class="icono-bell")
-			+mensajeNotificacion("Jane Hayworth", "Replied your comment in <a>Textbook Exchange</a>", 'Now', 'http://d3cprjxvoejtmm.cloudfront.net/images/2011/12/adamari-lopez-foto-nueva-telenovela-300x300.jpg')
-			+mensajeNotificacion("Angie Clark", "Commented on your post in <a>Euro Girls Trip</a>", '10 minutes ago', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_o36ED4-QMyaye4Y0LBrG7s3iddVj5KPc5AM7INM35d26S6yjKg')
-			+mensajeNotificacion("Sid Banks", "And 3 others liked your photo album <a>Summer '16</a>", '2 hours ago', 'https://www.guiadelnino.com/var/guiadelnino.com/storage/images/en-familia/los-famosos-y-los-hijos/nombres-de-bebes-famosos-en-2014/leo-y-lenni/5064524-1-esl-ES/leo-y-lenni_fullblock_bordered.jpg')
+		.content-container
+			.notification-icon-container
+				.notification-icon
+					span.notification-icon-counter!=3
+					i.icono-bell
+			+mensajeNotificacion("Jane Hayworth", "Replied your comment in <a>Textbook Exchange</a>", "Now", "http://d3cprjxvoejtmm.cloudfront.net/images/2011/12/adamari-lopez-foto-nueva-telenovela-300x300.jpg")
+			+mensajeNotificacion("Angie Clark", "Commented on your post in <a>Euro Girls Trip</a>", "10 minutes ago", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_o36ED4-QMyaye4Y0LBrG7s3iddVj5KPc5AM7INM35d26S6yjKg")
+			+mensajeNotificacion("Sid Banks", "And 3 others liked your photo album <a>Summer '16</a>", "2 hours ago", "https://www.guiadelnino.com/var/guiadelnino.com/storage/images/en-familia/los-famosos-y-los-hijos/nombres-de-bebes-famosos-en-2014/leo-y-lenni/5064524-1-esl-ES/leo-y-lenni_fullblock_bordered.jpg")

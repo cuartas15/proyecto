@@ -33,17 +33,25 @@ body {
   background-color: #F0F0F0; }
 
 a {
-  color: #FF3368; }
+  color: #FF2861; }
 
-.contenedor-icono-notificacion {
+.content-container {
+  width: 750px;
+  margin: 0 auto; }
+
+.notification-icon-container {
+  margin: 0 auto;
+  width: 50px; }
+
+.notification-icon {
   display: inline-block;
   position: relative;
   color: #D1D1D1;
   font-size: 50px; }
 
-.contador-icono-notificacion {
+.notification-icon-counter {
   position: absolute;
-  background-color: red;
+  background-color: #FF2861;
   color: #ffffff;
   font-size: 15px;
   font-weight: 900;
@@ -52,7 +60,7 @@ a {
   border-radius: 14px;
   padding: 1px 8px; }
 
-.panel-notificacion {
+.notification-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,62 +68,73 @@ a {
   -ms-flex-align: center;
   align-items: center;
   background-color: #ffffff;
-  width: 50%;
   border-radius: 8px;
   padding: 22px;
   margin: 35px 0px; }
 
-.punto-notificacion {
-  -ms-flex-item-align: start;
-  -ms-grid-row-align: start;
-  align-self: start;
+.image-container {
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 95px;
+  flex: 0 0 95px;
+  position: relative; }
+
+.notification-badge {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   background-color: #FF2861;
   width: 18px;
-  height: 16px;
+  height: 18px;
   border-radius: 50%; }
 
-.espacio-imagen {
-  width: 75px;
-  padding: 23px 0px;
+.image-area {
+  padding: 30px 0px;
+  padding-left: 18px;
   line-height: 0px; }
 
-.imagen-contacto {
+.contact-image {
   max-width: 100%;
   max-height: 100%;
   border-radius: 50%; }
 
-.espacio-texto {
+.text-area {
   text-align: left;
-  width: calc(100% - 93px);
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
   padding: 15px;
   margin-left: 18px; }
 
-.espacio-texto p {
+.text-area p {
   margin: 5px 0px; }
 
-.nombre-notificacion {
+.contact-name {
   font-weight: 900; }
 
-.tiempo-notificacion {
+.notification-time {
   font-weight: 200;
   font-size: 18px;
   color: #ABABAB; }
 
 @media screen and (max-width: 1050px) {
-  .panel-notificacion {
-    width: 65%;
+  .content-container {
+    width: 650px; }
+  .notification-panel {
     margin: 30px 0px; } }
 
-@media screen and (max-width: 810px) {
-  .panel-notificacion {
-    width: 80%;
-    margin: 25px 0px; } }
-
-@media screen and (max-width: 545px) {
-  .panel-notificacion {
-    width: 90%;
-    padding: 10px;
-    margin: 20px 0px; }
-  .espacio-texto {
+@media screen and (max-width: 670px) {
+  .content-container {
+    width: 450px; }
+  .notification-panel {
+    margin: 25px 0px; }
+  .text-area {
     padding: 5px;
     margin-left: 10px; } }
+
+@media screen and (max-width: 480px) {
+  .content-container {
+    width: 310px; }
+  .notification-panel {
+    padding: 10px;
+    margin: 20px 0px; } }
