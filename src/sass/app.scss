@@ -28,10 +28,10 @@ $primary-color: #FF2861;
     align-self: $align;
 }
 
-@mixin flex($width) {
-	-webkit-box-flex: 1;
-	-ms-flex: 1 1 $width;
-	flex: 1 1 $width;
+@mixin flex($width, $grow, $shrink) {
+	-webkit-box-flex: $shrink;
+	-ms-flex: $grow $shrink $width;
+	flex: $grow $shrink $width;
 }
 
 /* Icono de campana de icomoon */
@@ -120,7 +120,7 @@ a {
 
 .image-container { 
 	display: flex;
-	@include flex($width-image-container);
+	@include flex($width-image-container, 0, 0);
 	position: relative;
 }
 
@@ -136,7 +136,7 @@ a {
 
 .image-area {
 	padding: 30px 0px;
-	margin-left: 18px;
+	padding-left: 18px;
 	line-height: 0px;
 }
 
@@ -148,7 +148,7 @@ a {
 
 .text-area {
 	text-align: left;
-	@include flex(calc(100% - #{$width-image-container}));
+	@include flex(100%, 1, 1);
 	padding: 15px;
 	margin-left: 18px;
 }

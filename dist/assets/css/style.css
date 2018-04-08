@@ -74,9 +74,9 @@ a {
 
 .image-container {
   display: flex;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 95px;
-  flex: 1 1 95px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 95px;
+  flex: 0 0 95px;
   position: relative; }
 
 .notification-badge {
@@ -90,7 +90,7 @@ a {
 
 .image-area {
   padding: 30px 0px;
-  margin-left: 18px;
+  padding-left: 18px;
   line-height: 0px; }
 
 .contact-image {
@@ -101,8 +101,8 @@ a {
 .text-area {
   text-align: left;
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 calc(100% - 95px);
-  flex: 1 1 calc(100% - 95px);
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
   padding: 15px;
   margin-left: 18px; }
 
