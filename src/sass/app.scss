@@ -10,29 +10,6 @@ $width-and-height-badge: 18px;
 $width-image-container: 95px;
 $primary-color: #FF2861;
 
-@mixin display-flex() {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-}
-
-@mixin align-items($align) {
-	-webkit-box-align: $align;
-	-ms-flex-align: $align;
-	align-items: $align;
-}
-
-@mixin align-self($align) {
-	-ms-flex-item-align: $align;
-    -ms-grid-row-align: $align;
-    align-self: $align;
-}
-
-@mixin flex($width, $grow, $shrink) {
-	-webkit-box-flex: $shrink;
-	-ms-flex: $grow $shrink $width;
-	flex: $grow $shrink $width;
-}
 
 /* Icono de campana de icomoon */
 @font-face {
@@ -110,8 +87,8 @@ a {
 }
 
 .notification-panel {
-	@include display-flex();
-	@include align-items(center);
+	display: flex;
+	align-items: center;
 	background-color: #ffffff;
 	border-radius: 8px;
 	padding: 22px;
@@ -120,7 +97,7 @@ a {
 
 .image-container { 
 	display: flex;
-	@include flex($width-image-container, 0, 0);
+	flex: 0 0 $width-image-container;
 	position: relative;
 }
 
@@ -148,7 +125,7 @@ a {
 
 .text-area {
 	text-align: left;
-	@include flex(100%, 1, 1);
+	flex: 1 1 100%;
 	padding: 15px;
 	margin-left: 18px;
 }
